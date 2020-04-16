@@ -1,6 +1,6 @@
 {
   "name": "cyberland",
-  "description": "Simple client for accessing cyberland.club",
+  "description": "Simple client for accessing cyberland2.club",
   "version": "0.1",
   "perl": "6.*",
   "auth": "ofperfection",

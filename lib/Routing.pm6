@@ -1,5 +1,3 @@
-use Terminal::ANSIColor;
-
 sub introduction() is export {
     print q:to/END/;
     Cyberland2 Menu:
@@ -19,9 +17,3 @@ sub select-thread() is export {
     prompt(">");
 }
 
-sub display-content($posts) is export {
-    for @$posts {
-        say "$_{'id'}:";
-        say color('bold blue'), "$_{'content'}\n", color('reset');
-    }
-}

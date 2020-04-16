@@ -9,10 +9,11 @@ use Routing;
 
 sub MAIN() {
     my $board-selection = introduction;
-    my $stringified-content = from-json make-request($cl-base-url ~ "/$board-selection/" ~ "?thread=&num=10");
-    #my $stringified-content = from-json $json-content;
+    my $i-board = get-board("i");
+    my $n-board = get-board("n");
+    my $t-board = get-board("t");
 
-    display-content($stringified-content);
+   # display-content($i-board);
 
     my $thread-selection = select-thread;
     my $json-content = from-json make-request($cl-base-url ~ "/$board-selection/" ~ "?thread=$thread-selection&num=50");
