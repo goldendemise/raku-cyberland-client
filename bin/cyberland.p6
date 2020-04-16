@@ -3,17 +3,14 @@ use v6;
 use lib 'lib';
 use Cyberland;
 use CyberlandUrls;
-use JSON::Fast;
 use Routing;
-
+use JSON::Fast;
 
 sub MAIN() {
     my $board-selection = introduction;
-    my $i-board = get-board("i");
-    my $n-board = get-board("n");
-    my $t-board = get-board("t");
+    my $i-board = get-board("t");
 
-   # display-content($i-board);
+    display-content($i-board);
 
     my $thread-selection = select-thread;
     my $json-content = from-json make-request($cl-base-url ~ "/$board-selection/" ~ "?thread=$thread-selection&num=50");

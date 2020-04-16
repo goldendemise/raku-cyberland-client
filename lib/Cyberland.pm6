@@ -2,6 +2,7 @@ use v6;
 use HTTP::UserAgent;
 use CyberlandUrls;
 use Terminal::ANSIColor;
+use JSON::Fast;
 unit module Cyberland;
 
 
@@ -13,7 +14,8 @@ sub make-request($url) is export {
 }
 
 sub get-board($letter) is export {
-    from-json make-request($cl-base-url ~ "/$letter/" ~ "?thread=&num=1000")
+    print "$cl-base-url" ~ "/$letter/" ~ "?thread=&num=10";
+    from-json make-request($cl-base-url ~ "/$letter/" ~ "?thread=&num=1000");
 }
 
 sub display-content($posts) is export {
@@ -23,9 +25,9 @@ sub display-content($posts) is export {
     }
 }
 
-sub list-posts($posts) {
-    for @$posts {
-        say "$_{'id'}:";
-        say color('bold blue'), "$_{'content'}\n", color('reset');
-    }
-}
+#sub list-posts($posts) {
+#    for @$posts {
+#        say "$_{'id'}:";
+#        say color('bold blue'), "$_{'content'}\n", color('reset');
+#    }
+#}
